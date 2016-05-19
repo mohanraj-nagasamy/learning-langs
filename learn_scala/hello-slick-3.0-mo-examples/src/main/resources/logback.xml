@@ -1,0 +1,26 @@
+<configuration>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <!--<pattern>%coloredLevel - %logger - %message%n%xException</pattern>-->
+      <pattern>%date [%level] from %logger in %thread - %message%n%xException</pattern>
+    </encoder>
+  </appender>
+
+  <!--
+    The logger name is typically the Java/Scala package name.
+    This configures the log level to log at for a package and its children packages.
+  -->
+  <logger name="play" level="INFO" />
+  <logger name="application" level="DEBUG" />
+  <logger name="scala.slick" level="DEBUG" />
+  <logger name="slick" level="INFO" />
+  <logger name="slick.jdbc" level="DEBUG" />
+  <!--<logger name="com.zaxxer.hikari.pool.HikariPool" level="DEBUG" />-->
+  <!--<logger name="com.zaxxer.hikari.pool.PoolUtilities" level="DEBUG" />-->
+
+  <root level="DEBUG">
+    <appender-ref ref="STDOUT" />
+  </root>
+
+</configuration>
